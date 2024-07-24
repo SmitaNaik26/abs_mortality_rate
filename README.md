@@ -1,7 +1,7 @@
 # abs_mortality_rate
 
-###creating the project and dataset to run the code 
-###gcloud init
-###gcloud projects create smitanaik --name="smitanaik"
-###gcloud config set project smitanaik
-###bq mk --dataset smitanaik:abs
+### creating the project and dataset to run the code 
+#### 1. gcloud init
+#### 2. gcloud projects create smitanaik --name="smitanaik"
+#### 3. gcloud config set project smitanaik
+#### 4. bq mk --dataset smitanaik:abs
