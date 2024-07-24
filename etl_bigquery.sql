@@ -132,12 +132,6 @@ SELECT
         ELSE 'unknown_age_group'
     END AS age_group,
     STRING_AGG(cause_of_death, ', ') AS causes_of_death,
-    ROUND(SUM(CASE WHEN year = 2015 THEN rate_males ELSE 0 END), 2) AS rate_males_2015,
-    ROUND(SUM(CASE WHEN year = 2016 THEN rate_males ELSE 0 END), 2) AS rate_males_2016,
-    ROUND(SUM(CASE WHEN year = 2017 THEN rate_males ELSE 0 END), 2) AS rate_males_2017,
-    ROUND(SUM(CASE WHEN year = 2015 THEN rate_females ELSE 0 END), 2) AS rate_females_2015,
-    ROUND(SUM(CASE WHEN year = 2016 THEN rate_females ELSE 0 END), 2) AS rate_females_2016,
-    ROUND(SUM(CASE WHEN year = 2017 THEN rate_females ELSE 0 END), 2) AS rate_females_2017,
     ROUND(SUM(CASE WHEN year = 2015 THEN rate_persons ELSE 0 END), 2) AS rate_person_2015,
     ROUND(SUM(CASE WHEN year = 2016 THEN rate_persons ELSE 0 END), 2) AS rate_person_2016,
     ROUND(SUM(CASE WHEN year = 2017 THEN rate_persons ELSE 0 END), 2) AS rate_person_2017
@@ -145,8 +139,6 @@ FROM (
     SELECT
         cause_of_death,
         age_group,
-        rate_males,
-        rate_females,
         rate_persons,
         2015 AS year
     FROM smitanaik.abs.cause_of_death_2015
@@ -154,8 +146,6 @@ FROM (
     SELECT
         cause_of_death,
         age_group,
-        rate_males,
-        rate_females,
         rate_persons,
         2016 AS year
     FROM smitanaik.abs.cause_of_death_2016
@@ -163,8 +153,6 @@ FROM (
     SELECT
         cause_of_death,
         age_group,
-        rate_males,
-        rate_females,
         rate_persons,
         2017 AS year
     FROM smitanaik.abs.cause_of_death_2017
